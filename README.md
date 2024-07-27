@@ -8,7 +8,7 @@
 
 AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM permissions management. It integrates with Okta for identity management, GitHub for permissions review, PagerDuty for on-call assignment, Jira for issue tracking and task management, and Slack for communication and notifications.
 
-*** 
+___
 
 
 ### How it works
