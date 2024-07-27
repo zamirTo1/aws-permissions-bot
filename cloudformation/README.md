@@ -2,15 +2,11 @@
 
 This guide will help you deploy a CloudFormation template with AWS CloudFormation StackSets.
 
----
-
-### Prerequisites
+## Prerequisites
 
 - AWS Management Console access
 - AWS CLI installed and configured (for CLI method)
 - CloudFormation template ready and stored in an accessible location (S3 bucket or local machine)
-
----
 
 ## Steps to Deploy Using AWS Management Console
 
