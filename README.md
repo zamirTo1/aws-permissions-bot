@@ -9,6 +9,8 @@
 AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM permissions management. It integrates with Okta for identity management, GitHub for permissions review, PagerDuty for on-call assignment, Jira for issue tracking and task management, and Slack for communication and notifications.
 
 *** 
+
+
 ### How it works
 
 1. Slack app listens for slash commands.
@@ -25,6 +27,7 @@ AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM pe
 
 ***
 
+
 ### Requirements
 
 - [Slack application](https://api.slack.com/quickstart) with [slash command](https://api.slack.com/interactivity/slash-commands) enabled.
@@ -34,13 +37,17 @@ AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM pe
 - [Okta Token](https://developer.okta.com/docs/guides/create-an-api-token/main/).
 - AWS account with access to Bedrock Claud Sonnet 3.5 and view permissions for organization accounts.
 
+
 ***
+
 
 ### Runtime 
 - Terraform version 1.8.2 
 - AWS provider version 5.59.0.
 
+
 ***
+
 
 ### Installation
 
