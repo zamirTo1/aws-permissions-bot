@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  SecurityAccountId:
+    Type: String
+    Description: The AWS account ID for the security account
+    Default: '123456789012' # Change this to the security account ID
+
+Resources:
+  SecurityAuditRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: 'SecurityAuditRole'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS:  
+                - !Sub "arn:aws:iam::${SecurityAccountId}:root"
+            Action: 'sts:AssumeRole'
+            Condition:
+              StringLike:
+                aws:PrincipalArn:
+                  - !Sub "arn:aws:iam::${SecurityAccountId}:role/aws-permissions-bot-backend-role"
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/SecurityAudit'
