@@ -9,7 +9,7 @@ AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM pe
 ## How it works
 
 1. Slack app listens for slash commands.
-2. The lambda frontend invoke the backend lambda function and return OK status. 
+2. The invocation lambda calls the backend function and return OK status. 
 3. The backend lambda checks for the user's AWS group in Okta. 
 4. The backend lambda lists the resources for the requested AWS account.
 5. In case of list command, the backend lambda returns the list of resources. 

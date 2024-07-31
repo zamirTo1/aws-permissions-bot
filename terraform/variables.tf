@@ -10,7 +10,7 @@ variable "backend_lambda_name" {
   default     = "aws-permissions-bot-backend"
 }
 
-variable "frontend_lambda_name" {
+variable "invocation_lambda_name" {
   type        = string
   description = "The name of the frontend Lambda function"
   default     = "aws-permissions-bot-frontend"

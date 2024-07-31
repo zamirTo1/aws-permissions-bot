@@ -67,7 +67,7 @@ resource "aws_api_gateway_rest_api" "api" {
           },
           "x-amazon-apigateway-integration" : {
             "httpMethod" : "POST",
-            "uri" : "arn:aws:apigateway:${data.aws_region.current.name}:lambda:path/2015-03-31/functions/${aws_lambda_function.frontend_function.arn}/invocations",
+            "uri" : "arn:aws:apigateway:${data.aws_region.current.name}:lambda:path/2015-03-31/functions/${aws_lambda_function.invocation_function.arn}/invocations",
             "responses" : {
               "default" : {
                 "statusCode" : "200"
@@ -142,7 +142,7 @@ resource "aws_wafv2_web_acl_association" "waf_assoc" {
 resource "aws_lambda_permission" "api_gateway_permission" {
   statement_id  = "AllowAPIGatewayInvoke"
   action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.frontend_function.function_name
+  function_name = aws_lambda_function.invocation_function.function_name
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_api_gateway_rest_api.api.execution_arn}/*/*"
 }

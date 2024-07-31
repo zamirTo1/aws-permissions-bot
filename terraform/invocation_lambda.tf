@@ -1,12 +1,12 @@
 # Create log group for lambda logs
-resource "aws_cloudwatch_log_group" "frontend_func_log_group" {
-  name              = "/aws/lambda/${var.frontend_lambda_name}"
+resource "aws_cloudwatch_log_group" "invocation_func_log_group" {
+  name              = "/aws/lambda/${var.invocation_lambda_name}"
   retention_in_days = var.lambda_logs_retention
 }
 
 # Create Lambda role
-resource "aws_iam_role" "frontend_func_role" {
-  name = "${var.frontend_lambda_name}-role"
+resource "aws_iam_role" "invocation_func_role" {
+  name = "${var.invocation_lambda_name}-role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
     Statement = [
@@ -26,7 +26,7 @@ resource "aws_iam_role" "frontend_func_role" {
   ]
 
   inline_policy {
-    name = "${var.frontend_lambda_name}-role"
+    name = "${var.invocation_lambda_name}-role"
     policy = jsonencode({
       Version = "2012-10-17",
       Statement = [
@@ -46,20 +46,20 @@ resource "aws_iam_role" "frontend_func_role" {
   tags = var.tags
 }
 
-data "archive_file" "auto_response_lambda" {
+data "archive_file" "invocation_lambda" {
   type        = "zip"
-  source_dir  = "${path.module}/frontend"
-  output_path = "${path.module}/frontend.zip"
+  source_dir  = "${path.module}/invocation"
+  output_path = "${path.module}/invocation.zip"
 }
 
 # Create function
-resource "aws_lambda_function" "frontend_function" {
-  depends_on       = [aws_cloudwatch_log_group.frontend_func_log_group]
-  function_name    = var.frontend_lambda_name
+resource "aws_lambda_function" "invocation_function" {
+  depends_on       = [aws_cloudwatch_log_group.invocation_func_log_group]
+  function_name    = var.invocation_lambda_name
   description      = "Lambda function for ${var.backend_lambda_name}"
-  filename         = "${path.module}/frontend.zip"
+  filename         = "${path.module}/invocation.zip"
   handler          = "lambda_function.lambda_handler"
-  role             = aws_iam_role.frontend_func_role.arn
+  role             = aws_iam_role.invocation_func_role.arn
   runtime          = "python3.12"
   timeout          = 180
   architectures    = ["x86_64"]
