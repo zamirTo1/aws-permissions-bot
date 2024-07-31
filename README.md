@@ -23,13 +23,13 @@ AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM pe
 ## Architecture
 
 <div align="center">
-<img src="images/architecture.png" width="500">
+<img src="images/architecture.png" width="900">
 </div>
 
 ## UML
 
 <div align="center">
-<img src="images/uml.png" width="500">
+<img src="images/uml.png" width="900">
 </div>
 
 ## Requirements
