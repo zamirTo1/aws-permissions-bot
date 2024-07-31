@@ -1,6 +1,8 @@
 # Deploying CloudFormation Template with AWS CloudFormation StackSets
 
 This guide will help you deploy a CloudFormation template with AWS CloudFormation StackSets.
+The Stackset will deploy `SecurityAuditRole` in the target accounts. The role has metadata permissions to list and describe resources in the account.
+The `SecurityAuditRole` can be assumed by the backend lambda function located in the security account.
 
 ## Prerequisites
 
