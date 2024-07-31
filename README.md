@@ -20,7 +20,17 @@ AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM pe
 10. The backend lambda creates a Jira ticket and assign it to the security on-call personal.
 11. The backend lambda sends a Slack message to the requester with the Jira ticket link.
 
+## Architecture
 
+<div align="center">
+<img src="images/architecture.png" width="500">
+</div>
+
+## UML
+
+<div align="center">
+<img src="images/uml.png" width="500">
+</div>
 
 ## Requirements
 
