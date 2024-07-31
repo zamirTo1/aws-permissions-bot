@@ -8,13 +8,13 @@ This guide will help you deploy a CloudFormation template with AWS CloudFormatio
 - AWS CLI installed and configured (for CLI method)
 - CloudFormation template ready and stored in an accessible location (S3 bucket or local machine)
 
-## Steps to Deploy Using AWS Management Console
+# Steps to Deploy Using AWS Management Console
 
-### Step 1: Prepare the Template
+## Step 1: Prepare the Template
 
 Ensure your CloudFormation template is ready and stored in an accessible location, such as an S3 bucket or on your local machine.
 
-### Step 2: Create a New StackSet
+## Step 2: Create a New StackSet
 
 1. **Sign in to the AWS Management Console** and open the CloudFormation console at [https://console.aws.amazon.com/cloudformation](https://console.aws.amazon.com/cloudformation).
 
@@ -29,7 +29,7 @@ Ensure your CloudFormation template is ready and stored in an accessible locatio
 
 5. Click **Next**.
 
-### Step 3: Configure StackSet Details
+## Step 3: Configure StackSet Details
 
 1. **StackSet name**: Provide a name for your StackSet.
 
@@ -37,7 +37,7 @@ Ensure your CloudFormation template is ready and stored in an accessible locatio
 
 3. Click **Next**.
 
-### Step 4: Set Deployment Options
+## Step 4: Set Deployment Options
 
 1. **Deployment targets**: Choose how you want to deploy the StackSet.
    - **Deploy to AWS Organizations**: If you are using AWS Organizations, you can select organizational units (OUs).
@@ -47,7 +47,7 @@ Ensure your CloudFormation template is ready and stored in an accessible locatio
 
 3. Click **Next**.
 
-### Step 5: Configure StackSet Options
+## Step 5: Configure StackSet Options
 
 1. **Permission model**: Choose the appropriate permission model.
    - **Service-managed permissions**: Allows AWS CloudFormation to create roles on your behalf in the target accounts.
@@ -59,7 +59,7 @@ Ensure your CloudFormation template is ready and stored in an accessible locatio
 
 4. Click **Next**.
 
-### Step 6: Review and Create
+## Step 6: Review and Create
 
 1. **Review your settings** to ensure everything is correct.
 
