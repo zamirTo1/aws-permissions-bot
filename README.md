@@ -5,7 +5,6 @@
 # AWS Permissions Bot - AI-powered self-service bot for AWS permissions
 
 AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM permissions management. It integrates with Okta for identity management, GitHub for permissions review, PagerDuty for on-call assignment, Jira for issue tracking and task management, and Slack for communication and notifications.
-
  
 ## How it works
 
@@ -31,7 +30,7 @@ AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM pe
 - [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token).
 - [Okta Token](https://developer.okta.com/docs/guides/create-an-api-token/main/).
 - AWS account with access to Bedrock Claud Sonnet 3.5 and view permissions for organization accounts.
-
+- AWS service-role that can be assumed by the backend lambda function. (See CloudFormation template in the `cloudformation` folder)
 
 
 ## Runtime 
@@ -83,8 +82,6 @@ AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM pe
 5. From the AWS console navigate to API Gateway -> Stages -> live -> copy the Invoke URL.
 6. Create a new Slack slash command with the copied Invoke URL.
 
-
-
 ## Usage
 
 To use the bot, run on of th following commands in Slack:
@@ -104,13 +101,9 @@ examples:
     /aws_permissions grant -s s3|sqs -p write -a <account_name> -r <bucket_name> -o <on-behalf-user-name> -ps <permission-set-name>
 ```
 
-
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-
 
 ## License
 
