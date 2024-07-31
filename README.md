@@ -86,11 +86,11 @@ AWS Permissions Bot is an AI-powered self-service tool that automates AWS IAM pe
 
 To use the bot, run on of th following commands in Slack:
 ```
-/aws_permissions list -s s3|sqs -a <account>
-/aws_permissions grant -s s3|sqs -p <permission> -a <account> -r <resource> -o <on-behalf> -ps <permission-set-name>
+/aws_permissions list -s s3|sqs -a <account_name>
+/aws_permissions grant -s s3|sqs -p <permission> -a <account_name> -r <resource> -o <on-behalf> -ps <permission-set-name>
 -s, --service: AWS Service
 -p, --permission: Permission
--a, --account: AWS Account
+-a, --account: AWS Account Name
 -r, --resource: Resource Name
 -o, --on-behalf: On Behalf
 -ps, --permission-set-name: Permission Set Name
