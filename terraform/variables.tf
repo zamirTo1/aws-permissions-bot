@@ -12,8 +12,8 @@ variable "backend_lambda_name" {
 
 variable "invocation_lambda_name" {
   type        = string
-  description = "The name of the frontend Lambda function"
-  default     = "aws-permissions-bot-frontend"
+  description = "The name of the invocation Lambda function"
+  default     = "aws-permissions-bot-invocation"
 }
 
 variable "secrets_arn_list" {
