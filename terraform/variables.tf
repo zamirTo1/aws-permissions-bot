@@ -32,12 +32,6 @@ variable "endpoint_type" {
   }
 }
 
-variable "api_path" {
-  type        = string
-  default     = "/api/user-interaction"
-  description = "The path on the API Gateway where the POST request is accepted and routed to the SQS queue."
-}
-
 variable "log_level" {
   type        = string
   default     = "INFO"
