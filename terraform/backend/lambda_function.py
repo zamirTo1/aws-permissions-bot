@@ -228,7 +228,7 @@ def lambda_handler(event, context):
 
         # Get Bedrock response
         aws_bedrock_prompt = """
-            Add the {} resource named "{}" located in "{}" organization path
+            Add {} permission to the {} resource named "{}" located in "{}" organization path 
             Terraform module:
             {}
             {}
@@ -236,6 +236,7 @@ def lambda_handler(event, context):
             Terraform environment file:
             {}
         """.format(
+            args.permission,
             args.service,
             args.resource,
             aws_connector.account_ou,
